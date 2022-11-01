@@ -1,0 +1,218 @@
+{% extends 'app/main.html' %}
+
+{% load static %}
+  
+  
+  {% block style %}
+  <link rel="stylesheet" href="{% static 'app/styles/style.css'%}">
+  {% endblock style %}
+  {% block content %}
+  
+
+</head>
+<body>
+ 
+<!-- home section starts  -->
+<!-- there are some names written as anime or something which dont relate to topic and this code we are very sorry for this inconvenience some topic shifts leaded us to this problem  -->
+<section class="home" id="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+{% for data in homepage %}
+            <div class="swiper-slide">
+                <div class="box" style="background: url({{data.homepage_thumbnail}}) no-repeat black;">
+                    <div class="content">
+                        
+                        <h3>{{data.home_anime_name}}</h3>
+                        <p>{{data.Homedescription}}</p>
+                        <a href="{% url 'anime' %}" class="btn">All Anime</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+
+            
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+
+</section>
+
+<!-- romcom section starts  -->
+
+<section class="shop" id="shop">
+
+    <a href="{% url 'videoupload' %}"><h1 class="heading">click to upload video</h1></a>
+
+    <div class="swiper product-slider">
+
+        <div class="swiper-wrapper">
+{% for a in video %}
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <video class="v" width='200' height='300' controls >
+                        <source src="{{MEDIA_URL}}{{ a.videofile }}"type='video/mp4'>
+                        Your browser does not support the video tag.
+                        </video>
+                        <p>{{a.name}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            
+
+            
+
+            
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+
+</section>
+<!-- reviews section starts  -->
+
+<section class="reviews" id="reviews">
+
+    <h1 class="heading">About Our Website</h1>
+
+    <div class="swiper review-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <p class="text">our daily updation team ,update anime on daily updation without any delay in real time,you can experience a fast and updated service here</p>
+                <div class="user">
+                    
+                    <div class="info">
+                        <h3>daily updation</h3>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p class="text">we update new anime time to time on weekly basis ,our site maanagement team is exploring and making this site more usable and easy for new users</p>
+                <div class="user">
+                    
+                    <div class="info">
+                        <h3>new anime </h3>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p class="text">we never share your data publicaly your data is end to end crypted and no one can access that witout permision of mods</p>
+                <div class="user">
+                   
+                    <div class="info">
+                        <h3>data safety</h3>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- services section starts  -->
+<!-- 
+<section class="services">
+
+    <h1 class="heading"> what we offer </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/serv-1.png" alt="">
+            <h3>complete guide</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, nihil?</p>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <img src="images/serv-2.png" alt="">
+            <h3>custom packages</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, nihil?</p>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+            <img src="images/serv-3.png" alt="">
+            <h3>family trips</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, nihil?</p>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+       
+        
+    </div>
+
+</section>letter section  --> 
+
+
+
+
+<section class="newsletter">
+
+ 
+    <div class="content">
+        <h1 class="heading">give feedback</h1>
+        <p>our mods are avilable 24x7 to serve you , you can send any feedback here and our admins will reply on main soon</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="feedbck" placeholder="enter your feedback" id="" class="email">
+            <input type="submit" value="submit" class="btn">
+        </form>
+    </div>
+
+</section>
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+       
+
+        <div class="box">
+            <h3>follow us</h3>
+            <!-- <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a> -->
+            <a href=""> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="https://t.me/about_to_die_o_o"> <i class="fab fa-telegram"></i> telegram </a>
+    
+        </div>
+
+    </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/styles/style.css'%}">
+
+<header class="header">
+
+    <a href="{% url 'home' %}" class="logo"> animeX </a>
+
+    <nav class="navbar">
+        <div id="nav-close" class="fas fa-times"></div>
+        <a href="{% url 'home' %}">home</a>
+        <a href="{% url 'anime' %}">all anime</a>
+        <a href=" {% url 'videoupload' %} ">upload video</a>
+        <a href="{% url 'login' %}">login</a>
+        <a href="{% url 'logout' %}">logout</a>
+        <a href="{% url 'register' %}">sign up</a>
+    </nav>
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div id="search-btn" class="fas fa-search"></div>
+    </div>
+
+</header>
+
+<div class="search-form">
+
+    <div id="close-search" class="fas fa-times"></div>
+
+    <form action="">
+        <input name="q" type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+</div>
+

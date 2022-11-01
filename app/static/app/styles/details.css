@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  h1, h2, #total, #quantity {
+    text-transform:uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  h1 {
+    font-size:6em;
+    font-weight:bold;
+    margin-top: -.15em;
+  }
+  
+  h2{
+    font-size:2.5em;
+  }
+  
+  h3{
+    font-size: 1.875em;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .stock li:nth-child(3) {
+    font-size: 1.875em;
+  }
+  
+  h2, span, .rating, .stock li:nth-child(3){
+    color: #999999;
+  }
+  
+  a {
+     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .screen {
+    width: 1000px;
+    height: 800px;
+    margin: 0 auto;
+    background: url(http://johnnycotton.me/codepen/002/bg.png) grey;
+    padding-top: 1px;
+  }
+  
+  .container {
+    position: relative;
+    width: 770px;
+    height: 620px;
+    margin: 90px auto;
+    background-color: white;
+    padding: .1px
+  }
+  
+  
+  span{
+    line-height: 1.2em;
+    font-size: 1.05em;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .content {
+    margin: 20px 0;
+    padding:35px 0px 0px 55px;
+  }
+  
+  .triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: #D6D700 transparent       transparent transparent;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .triangle img {
+    position:absolute;
+    top: -42px;
+    left: 50px;
+  }
+  
+  .content-left {
+    width: 50%;
+    float: left;
+    margin-right: 5%
+  }
+  
+  img{
+    margin-left: -40px;
+  }
+  
+  .content-right {
+    width: 37%;
+    float: left;
+    
+  }
+  
+  #warranty{
+    color:#3399FF;
+  }
+  
+  .rating{
+    margin: 2em 0 3.5em;
+  }
+  
+  li{
+    display:inline-block;
+  }
+  
+  .gold{
+    background-image: url("http://johnnycotton.me/codepen/002/gold.png");
+  }
+  
+  .grey{
+    background-image: url(http://johnnycotton.me/codepen/002/grey.png);
+    margin-right: .5em;
+  }
+  
+  .star{
+    height: 1em;
+    width: 1em;
+  }
+  
+  .arrow{
+    height: 20px;
+    width: 10px;
+    cursor: pointer;
+  }
+  
+  #arrow-left{
+    background: url(http://johnnycotton.me/codepen/002/left.png) no-repeat center center;
+    margin: 0 2em;
+  }
+  
+  #arrow-right{
+    background: url(http://johnnycotton.me/codepen/002/right.png) no-repeat center center;
+    margin:0 0 0 2em;
+  }
+  
+  footer{
+    position: absolute;
+    border-top: 1px solid #D8D8D8;
+    margin-right:60px;
+    bottom:0;
+    margin-bottom: 3.5%;
+    width: 85%;
+    height:10%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .price{
+    float:left;
+    font-size:1.8em;
+  }
+  
+  #total {
+    font-size: .875rem;
+  }
+  
+  .cart {
+    float:right;
+    padding-top: 3%;
+    font-size: 1.8em;
+  }
+  
+  #cart-text,
+  #total-cash{
+    color:#BCBD31;
+  }
+  
+  .clearfix::before,
+  .clearfix::after {
+    content: "";
+    display: table;
+  }
+  
+  .clearfix::after {
+    clear: both;
+  }

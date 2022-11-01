@@ -1,0 +1,27 @@
+
+{% extends 'app/main.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<body>
+    <br><br><br>
+    <br>
+<h1>Video Uploader</h1>
+
+<form enctype="multipart/form-data" method="POST" action="">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Upload"/>
+</form>
+<p>points = {{points}}</p>
+
+{% else %}
+<br>
+<br>
+<br>
+<br>
+<h1>error login first to upload videos</h1>
+<a href="{% url 'login' %}" class="btn">login</a>
+{% endif %}
+</body>
+{% endblock content %}

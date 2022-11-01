@@ -1,0 +1,39 @@
+{% extends 'app/main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'app/styles/login.css'%}">
+{% endblock style %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    
+   
+    <section>
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <div class="row">
+                <label for="">enter your username</label>
+                <input type="text" name="username" placeholder="username"><br>
+            </div>
+            <div class="row">
+<label for="">enter your password</label>
+                <input type="password" name="password" placeholder="password"><br>
+            </div>
+	<button type="submit">Login</button>
+</form>
+<div>
+    {% for message in messages %}
+    <h4 id="messages">{{message}} </h4>
+    {% endfor %}
+</div>
+<div class="reg">
+
+    <h5>havent signed up yet</h5>
+    <a href="{%url 'register'%}">register</a>
+</div>
+</section>
+
+
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends 'app/main.html' %}
+{% load static %}
+{%block content%}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'app/styles/list.css'%}">
+{% endblock style %}
+
+<div class="search-form">
+
+  <div id="close-search" class="fas fa-times"></div>
+
+  <form action="">
+      <input name="q" type="search" name="" placeholder="search here..." id="search-box">
+      <label for="search-box" class="fas fa-search"></label>
+  </form>
+</div>
+<div class="listing-section">
+  <div class="heading">
+    <h2>all anime</h2>
+  </div>
+  <div class="row">
+    
+    {% for a in videofile %}
+    
+  <div class="card">
+    <div class="body">
+      
+<video class="v" width='200' controls >
+<source src="{{MEDIA_URL}}{{ a.videofile }}"type='video/mp4'>
+
+Your browser does not support the video tag.
+</video>
+<p class="words"> {{a.name}} </p>
+</p>
+    </div>
+  </div>
+  {% endfor %}
+  
+</div>
+
+
+</div>
+
+
+
+{% endblock content %}
